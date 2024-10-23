@@ -25,6 +25,12 @@ async def execute_transactions():
         print(f"Pausing for {pause_duration:.2f} seconds before the next transaction.")
         time.sleep(pause_duration)
 
+        await unichain.back_swap()
+
+        pause_duration = random.uniform(15, 35)
+        print(f"Pausing for {pause_duration:.2f} seconds before the next transaction.")
+        time.sleep(pause_duration)
+
 
 async def main():
     await execute_transactions()
